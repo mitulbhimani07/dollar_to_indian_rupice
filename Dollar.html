@@ -1,0 +1,76 @@
+<body style="background-color: #f0f0f0; font-family: Arial, sans-serif;">
+    <style>
+        table {
+            margin-top: 200px;
+            background-color: #ff4d4d;
+            padding: 40px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+
+        table tr td input {
+            width: 100%;
+            border-radius: 30px;
+            padding: 12px 25px;
+            border: 1px solid #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        table tr td input[type="submit"] {
+            background-color: #fff;
+            color: #ff4d4d;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        table tr td input[type="submit"]:hover {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: 1px solid #ff4d4d;
+        }
+
+        input[type="text"] {
+            color: #333;
+            font-size: 16px;
+        }
+
+        h2 {
+            margin-top: 200px;
+            color: #333;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <table align="center">
+        <tr>
+            <td>
+                Add Dollar<br>
+                <input type="text" id="dollar" placeholder="Enter amount in dollars">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit" onclick="subv()">
+            </td>
+        </tr>
+    </table>
+
+    <h2 align="center" id="india"></h2>
+
+    <script>
+        function subv(){
+            var dollar = parseFloat(document.getElementById('dollar').value);
+            if(isNaN(dollar)){
+                document.getElementById('india').innerHTML = "Please enter a valid number.";
+                return;
+            }
+            var rupice = dollar * 83.12;
+            document.getElementById('india').innerHTML = "Indian Rupees = " + rupice.toFixed(2);
+        }
+    </script>
+</body>
